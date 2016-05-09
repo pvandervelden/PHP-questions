@@ -2442,11 +2442,12 @@ Gegeven de bovenstaande JSON dataset in $jsonData, willen we van records met ins
 - de voornaam en de achternaam van de verzekerde persoon
 - Het polisnummer (policyId) van de polisnummer
 
-Zorg ervoor dat de data netjes geformatteerd op het scherm wordt getoond, als je in een browser wilt tonen houdt dan rekening met html-entiteiten
+Zorg ervoor dat de data netjes geformatteerd op het scherm wordt getoond, als je het resultaat in een browser wilt tonen houdt dan rekening met html-entiteiten, of geef de juiste content type header op (text/plain)
 
 Hints:
   - json_decode
-  - html_entities
+  - htmlentities
+  - array_filter
 
 Success
   
