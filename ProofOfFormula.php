@@ -28,15 +28,4 @@ hint:
 Succes!
 */
 
-// Deze functie kun je gebruiken om de weergave te krijgen :) 
-function getTermOfFnXString($x) 
-{
-	if ($x == 0) {
-		return "1";
-	}
-	else 
-	{
-		return "f($x)";
-	}
-}
 
