@@ -7,16 +7,15 @@ class Person {
 	public $lastname;
 	public $dateofbirth;
 	
-	
-	public function __construct($Initials = '', $FirstName = '', $MiddleName = '', $LastName = '', $dob) {
-		$this->initials = $Initials;
-		$this->firstname = $FirstName;
-		$this->middlename = $MiddleName;
-		$this->lastname = $LastName;
+	public function __construct($initials = '', $firstName = '', $middleName = '', $lastName = '', $dob = null) 
+	{
+    	$this->initials = $initials;
+		$this->firstname = $firstName;
+		$this->middlename = $middleName;
+		$this->lastname = $lastName;
 		$this->dateofbirth = $dob;
 	}
 }
-
 
 $data = [];
 $data[] = new Person('p','Pieter-Argibald','','Puk', new DateTime('1989/02/01'));
@@ -55,4 +54,3 @@ Success!
 
 */
 
-?>
