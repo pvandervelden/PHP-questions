@@ -17,7 +17,10 @@ Assignment 1/2:
   this time it also needs te determine on it's own how many Knight pieces can be ultimately placed on 
   the NxN sized board, without "checking" each other
 
-  
+Requirement:
+- N needs to be an integer which needs to be entered at runtime.
+- When outputting (on screen or to a browser), please make sure output is nicely & human readable formatted
+
 Best of luck!
   
 */
