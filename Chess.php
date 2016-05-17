@@ -13,6 +13,7 @@ Assignment 1/2:
   such a way they don't "check" each other. BEWARE! If a placement _only differs from another by 
   rotation or reflection of the board_, it isn't considered a different possibility
 
+Assignment 2/2:
 - Write a PHP similar php algorithm which does the same for the maximum possible amount of Knight pieces, only 
   this time it also needs te determine on it's own how many Knight pieces can be ultimately placed on 
   the NxN sized board, without "checking" each other
