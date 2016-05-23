@@ -1,6 +1,6 @@
 <?php
 
-$jsonData = <<<'EOD'
+$jsonData = <<<EOD
 [
   {
     "_id": "57274d7669490c35423540cf",
@@ -2453,3 +2453,87 @@ Success
   
 */
 
+
+/*
+ * =========
+ * Oplossing
+ * =========
+ */
+
+/**
+ * @param array $value
+ * @return bool
+ */
+function arrayFilter($value)
+{
+    return (isset($value['insurance']['type']) && $value['insurance']['type'] == 'car');
+}
+
+/**
+ * @param array $record
+ * @return string HTML
+ */
+function formatRecord($record)
+{
+    $tpl = "<div class=\"row\"><div class=\"cell\">%s</div><div class=\"cell\">%s</div><div class=\"cell\">%s</div></div>";
+    return sprintf(
+        $tpl,
+        htmlentities(trim($record['policyTaker']['first'] . ' ' . $record['policyTaker']['last'])),
+        htmlentities(trim($record['insuredPerson']['first'] . ' ' . $record['insuredPerson']['last'])),
+        htmlentities($record['policyId'])
+    );
+}
+
+// Uiteindelijke calls:
+
+$arrayData = json_decode($jsonData, true);
+$filteredArrayData = array_filter($arrayData, 'arrayFilter');
+
+?>
+<html>
+<head>
+</head>
+<body>
+<div class="table">
+    <div class="header">
+        <div class="cell">Verzekeringsnemer</div>
+        <div class="cell">Verzekerde</div>
+        <div class="cell">Polisnummer</div>
+    </div>
+    <?php
+    foreach ($filteredArrayData as $record) {
+        echo formatRecord($record);
+    }
+    ?>
+</div>
+<style type="text/css">
+    .table
+    {
+        display:  table;
+        width:auto;
+        border:1px solid black;
+    }
+
+    .table .row,
+    .table .header
+    {
+        display: table-row;
+        width: auto;
+        border: 1px solid black;
+    }
+
+    .table .cell
+    {
+        float: left;
+        display: table-column;
+        border: 1px solid black;
+        width: 300px;
+    }
+
+    .table .header .cell
+    {
+        background-color: lightblue;
+    }
+</style>
+</body>
+</html>

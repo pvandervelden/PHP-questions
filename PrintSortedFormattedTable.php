@@ -102,7 +102,7 @@ function getSortableString(Person $p)
  */
 function comparePerson(Person $p, Person $q)
 {
-    return strcmp(getSortableString($p), getSortableString($q));
+    return strcasecmp(getSortableString($p), getSortableString($q));
 }
 
 /**
